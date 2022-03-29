@@ -6,8 +6,15 @@ const expressHbs = require('express-handlebars');
 const path = require('path');
 
 const app = express();
-app.engine('handlebards', expressHbs);
-app.set('view engine', 'handlebards');
+app.engine(
+  'hbs',
+  expressHbs({
+    layoutsDir: 'views/layouts/',
+    defaultLayout: 'main-layout',
+    extname: 'hbs',
+  })
+);
+app.set('view engine', 'hbs');
 // Change to test and learn handlebards
 // app.set('view engine', 'pug');
 app.set('views', 'views');
