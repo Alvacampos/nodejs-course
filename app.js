@@ -2,10 +2,11 @@ const express = require('express');
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 const bodyParser = require('body-parser');
-const expressHbs = require('express-handlebars');
+//const expressHbs = require('express-handlebars');
 const path = require('path');
 
 const app = express();
+/*
 app.engine(
   'hbs',
   expressHbs({
@@ -15,8 +16,10 @@ app.engine(
   })
 );
 app.set('view engine', 'hbs');
+*/
 // Change to test and learn handlebards
 // app.set('view engine', 'pug');
+app.set('view engine', 'ejs');
 app.set('views', 'views');
 console.log('Server Started...');
 
